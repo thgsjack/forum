@@ -1,0 +1,220 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)http://www.shadowbox-js.com/usage.html -->
+<HTML><HEAD><TITLE>Shadowbox.js » Usage</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="Shadowbox_js%20»%20Usage.files/style.css">
+<META name=GENERATOR content="MSHTML 8.00.6001.19120"></HEAD>
+<BODY>
+<DIV id=outer-wrapper>
+<DIV id=stripe></DIV>
+<DIV id=wrapper>
+<DIV id=header><A href="http://www.shadowbox-js.com/index.html"><IMG 
+alt=Shadowbox.js src="Shadowbox_js%20»%20Usage.files/logo.gif"></A> </DIV>
+<UL id=nav>
+  <LI><A href="http://www.shadowbox-js.com/index.html">Home</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/download.html">Download</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/support.html">Support</A></LI>
+  <LI><A class=selected>Usage</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/options.html">Options</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/api.html">API</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/faq.html">FAQ</A></LI>
+  <LI><A href="http://www.shadowbox-js.com/forum.html">Forum</A></LI></UL>
+<DIV id=content>
+<P>Shadowbox was designed with both the web hobbyist and the experienced 
+programmer in mind. As such, it can easily be added to any web page with very 
+little time and effort using the default settings. At the same time, Shadowbox 
+offers a great deal of flexibility for those users who need to fine-tune the 
+details of its appearance and operation for a given project.</P>
+<P>This page contains detailed instructions on how to set up and run Shadowbox 
+from both perspectives.</P>
+<H2><A name=installation>Installation</A></H2>
+<P>After you <A href="http://www.shadowbox-js.com/download.html">download</A> a 
+copy of the code with all of the options you need, decompress the archive (unzip 
+it) and upload the entire folder to your web server. The exact location is not 
+important since Shadowbox will automatically detect where it is installed when 
+it runs. However, it is important that you keep all of the files together. After 
+you have uploaded the code to your server, simply link to the JavaScript and CSS 
+files as described below.</P>
+<H2><A name=setup>Setup</A></H2>
+<P>The simplest way to set up Shadowbox is to include the JavaScript and CSS 
+files in the <CODE>&lt;head&gt;</CODE> of your document (web page) and then call 
+<CODE>Shadowbox.init</CODE>, like this:</P><PRE><CODE>&lt;link rel="stylesheet" type="text/css" href="shadowbox.css"&gt;
+&lt;script type="text/javascript" src="shadowbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+Shadowbox.init();
+&lt;/script&gt;
+</CODE></PRE>
+<P>The following example is a bit more complex and uses an object literal to 
+specify some <A href="http://www.shadowbox-js.com/options.html">options</A>. 
+Options passed to this method will become the default for all instances of 
+Shadowbox on the page.</P><PRE><CODE>&lt;link rel="stylesheet" type="text/css" href="shadowbox.css"&gt;
+&lt;script type="text/javascript" src="shadowbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+Shadowbox.init({
+    handleOversize: "drag",
+    modal: true
+});
+&lt;/script&gt;
+</CODE></PRE>
+<H2><A name=markup>Markup</A></H2>
+<P>Next you need to tell Shadowbox which links you want it to open. The simplest 
+way to do this is through your HTML markup. If you're going to take this route, 
+at the very least you must add a <CODE>rel="shadowbox"</CODE> attribute to each 
+link. For example, say you have this link to an image on your page:</P><PRE><CODE>&lt;a href="myimage.jpg"&gt;My Image&lt;/a&gt;
+</CODE></PRE>
+<P>In order to set up this link for use with Shadowbox, simply change it to 
+this:</P><PRE><CODE>&lt;a href="myimage.jpg" rel="shadowbox"&gt;My Image&lt;/a&gt;
+</CODE></PRE>
+<P>That's it! Clicking on this link should now open up the image in 
+Shadowbox.</P>
+<P class=note><SPAN class=note-label>NOTE:</SPAN> <SPAN class=note-text>The word 
+<CODE>lightbox</CODE> will also work here. This feature was added for 
+compatibility with the original <A 
+href="http://www.huddletogether.com/projects/lightbox2/">Lightbox</A> script. 
+Also note that because HTML <A 
+href="http://www.w3.org/TR/html401/struct/objects.html#h-13.6.1">area</A> tags 
+do not support the <CODE>rel</CODE> attribute, you cannot use this method to set 
+them up for use with Shadowbox. Instead, use <CODE>Shadowbox.setup</CODE> as 
+described <A 
+href="http://www.shadowbox-js.com/usage.html#advanced">below</A>.</SPAN> </P>
+<P>If you would like to display a title for your image, simply add a 
+<CODE>title</CODE> attribute to the link.</P><PRE><CODE>&lt;a href="myimage.jpg" rel="shadowbox" title="My Image"&gt;My Image&lt;/a&gt;
+</CODE></PRE>
+<P>You must explicitly tell Shadowbox the dimensions to use to display content 
+other than images. This is done by adding a few parameters to the end of the 
+<CODE>rel</CODE> attribute, separated by semi-colons. To specify a movie's 
+height and width (in pixels), use the <CODE>height</CODE> and <CODE>width</CODE> 
+parameters.</P><PRE><CODE>&lt;a href="mymovie.swf" rel="shadowbox;height=140;width=120"&gt;My Movie&lt;/a&gt;
+</CODE></PRE>
+<P>In addition to displaying single images and movies, Shadowbox is also capable 
+of displaying galleries of content. In order to designate a link as part of a 
+gallery, you must add the gallery name to the <CODE>rel</CODE> attribute between 
+square brackets immediately following the word <CODE>shadowbox</CODE>. The 
+following markup creates a gallery called "Vacation" with two pictures.</P><PRE><CODE>&lt;a href="beach.jpg" rel="shadowbox[Vacation]"&gt;The Beach&lt;/a&gt;
+&lt;a href="pier.jpg" rel="shadowbox[Vacation]"&gt;The Pier&lt;/a&gt;
+</CODE></PRE>
+<P>Galleries may be composed of content of many different types. The following 
+markup demonstrates how various media can be combined into a single gallery.</P><PRE><CODE>&lt;a rel="shadowbox[Mixed];" href="myimage.jpg"&gt;jpg&lt;/a&gt;
+&lt;a rel="shadowbox[Mixed];width=520;height=390" href="myswf.swf"&gt;swf&lt;/a&gt;
+&lt;a rel="shadowbox[Mixed];width=292;height=218" href="mymovie.mp4"&gt;movie&lt;/a&gt;
+&lt;a rel="shadowbox[Mixed]" href="mywebsite.html"&gt;iframe&lt;/a&gt;
+</CODE></PRE>
+<H2><A name=advanced>Advanced</A></H2>
+<P>If you don't want to add to your markup, you don't have to. Shadowbox may be 
+manipulated and controlled with only JavaScript. This use is slightly more 
+complex, but it has several benefits including the fact that your HTML markup 
+will be cleaner and you can more easily integrate Shadowbox into an existing 
+project.</P>
+<P>If you were paying attention in the section about <A 
+href="http://www.shadowbox-js.com/usage.html#markup">markup</A>, you'll notice 
+that there are several properties that are commonly present on a Shadowbox 
+content object. They are listed in the table below.</P>
+<TABLE border=0 cellSpacing=1 cellPadding=0>
+  <THEAD>
+  <TR>
+    <TH>Property</TH>
+    <TH>Description</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>content</TD>
+    <TD>The actual content of the object (e.g. URL, HTML code, etc.)</TD></TR>
+  <TR>
+    <TD>player</TD>
+    <TD>The abbreviated name of the player to use for the object (optional, 
+      can be automatically determined in most cases)</TD></TR>
+  <TR>
+    <TD>title</TD>
+    <TD>The title to use for the object (optional)</TD></TR>
+  <TR>
+    <TD>gallery</TD>
+    <TD>The name of the gallery the object belongs to (optional)</TD></TR>
+  <TR>
+    <TD>height</TD>
+    <TD>The height of the object (in pixels, only required for movies and 
+      Flash)</TD></TR>
+  <TR>
+    <TD>width</TD>
+    <TD>The width of the object (in pixels, only required for movies and 
+    Flash)</TD></TR>
+  <TR>
+    <TD>options</TD>
+    <TD>A set of <A 
+      href="http://www.shadowbox-js.com/options.html">options</A> to use for 
+      this object</TD></TR></TBODY></TABLE>
+<P>When using <A 
+href="http://www.shadowbox-js.com/usage.html#markup">markup</A>, each of these 
+properties is automatically derived from the link element itself using the <A 
+href="http://www.shadowbox-js.com/api.html#buildobject"><CODE>Shadowbox.buildObject</CODE> 
+method</A>. But now that you know what's really going on behind the scenes, you 
+can just pass objects (or arrays of objects) that contain these properties to 
+<CODE>Shadowbox.open</CODE> as in the following example:</P><PRE><CODE>&lt;link rel="stylesheet" type="text/css" href="shadowbox.css"&gt;
+&lt;script type="text/javascript" src="shadowbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+Shadowbox.init({
+    // let's skip the automatic setup because we don't have any
+    // properly configured link elements on the page
+    skipSetup: true
+});
+
+window.onload = function() {
+
+    // open a welcome message as soon as the window loads
+    Shadowbox.open({
+        content:    '&lt;div id="welcome-msg"&gt;Welcome to my website!&lt;/div&gt;',
+        player:     "html",
+        title:      "Welcome",
+        height:     350,
+        width:      350
+    });
+
+};
+&lt;/script&gt;
+</CODE></PRE>
+<P>You can also use <CODE>Shadowbox.setup</CODE> to manually set up link 
+elements for use with Shadowbox. This can be useful, for example, if you have a 
+page that is updated via Ajax with links being created and destroyed 
+dynamically.</P><PRE><CODE>&lt;link rel="stylesheet" type="text/css" href="shadowbox.css"&gt;
+&lt;script type="text/javascript" src="shadowbox.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+Shadowbox.init({
+    // skip the automatic setup again, we do this later manually
+    skipSetup: true
+});
+
+window.onload = function() {
+
+    // set up all anchor elements with a "movie" class to work with Shadowbox
+    Shadowbox.setup("a.movie", {
+        gallery:            "My Movies",
+        autoplayMovies:     true
+    });
+
+};
+&lt;/script&gt;
+</CODE></PRE>
+<P>When using this method to set up links with Shadowbox, you may mix in the 
+link parameters with the options argument as the second parameter. However, the 
+same parameters will apply to all links set up in the same call, so you may want 
+to make separate calls to <CODE>Shadowbox.setup</CODE> for each link.</P>
+<P class=note><SPAN class=note-label>NOTE:</SPAN> <SPAN class=note-text>The 
+first parameter to <CODE>Shadowbox.setup</CODE> may be a single link element, an 
+array of elements, a CSS selector (assuming you included CSS support when you 
+downloaded the code), or an array in which the first item is a CSS selector and 
+the second item is the context element under which the selection should take 
+place.</SPAN> </P></DIV>
+<DIV id=push></DIV></DIV></DIV>
+<DIV id=footer>
+<P>Copyright © 2007-2010 <A href="http://mjijackson.com/">Michael J. I. 
+Jackson</A></P></DIV>
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+try {
+var pageTracker = _gat._getTracker("UA-998116-7");
+pageTracker._trackPageview();
+} catch(err) {}
+</SCRIPT>
+</BODY></HTML>

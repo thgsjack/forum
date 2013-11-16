@@ -1,0 +1,38 @@
+[ERROR] http://localhost -> 2013-10-10 00:33:57: 
+
+Invalid SQL: SELECT * FROM news LIMIT -10,10
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1
+
+[ERROR] http://localhost -> 2013-10-10 00:34:18: 
+
+Invalid SQL: SELECT * FROM news LIMIT -10,10
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-10,10' at line 1
+
+[ERROR] http://localhost -> 2013-10-10 11:31:58: 
+
+Invalid SQL: DELETE FROM news 
+		WHERE news_id=
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+
+[ERROR] http://localhost -> 2013-10-10 17:42:26: 
+
+Invalid SQL: 
+				INSERT INTO news(news_type,news_title,news_content,news_time)
+				VALUES(&quot;1&quot;,&quot;234&quot;,&quot;&lt;img alt=&quot;&quot; src=&quot;/newsPic/images/01.png&quot; style=&quot;width: 850px; height: 1350px;&quot; /&gt;&amp;nbsp;&lt;br /&gt;
+aa&lt;br /&gt;
+&quot;,&quot;2013年10月10日 17時42分&quot;)
+			
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'png&quot; style=&quot;width: 850px; height: 1350px;&quot; /&gt;&amp;nbsp;&lt;br /&gt;
+aa&lt;br /&gt;
+&quot;,&quot;2013年1' at line 2
+
+[ERROR] http://localhost -> 2013-10-10 17:48:38: 
+
+Invalid SQL: SELECT * FROM admin WHERE u_useranme=&quot;&quot; AND u_password=&quot;&quot;
+
+mysql error: Unknown column 'u_useranme' in 'where clause'
+

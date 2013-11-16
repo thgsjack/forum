@@ -1,0 +1,97 @@
+[ERROR] http://localhost -> 2013-10-10 11:58:20: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:03:36: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:04:26: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:04:31: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:04:34: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:04:44: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:05:04: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:05:11: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:05:13: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:29:33: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 12:30:56: 
+
+Invalid SQL: SELECT news_content FROM newes WHERE news_id=&quot;&quot;
+
+mysql error: Table 'forum.newes' doesn't exist
+
+[ERROR] http://localhost -> 2013-10-10 13:08:32: 
+
+Invalid SQL: 
+				UPDATE news
+				SET news_content=&quot;&quot;
+				 WHERE news_id=
+			
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+
+[ERROR] http://localhost -> 2013-10-10 13:08:41: 
+
+Invalid SQL: 
+				UPDATE news
+				SET news_content=&quot;&quot;
+				 WHERE news_id=
+			
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+
+[ERROR] http://localhost -> 2013-10-10 13:40:36: 
+
+Invalid SQL: 
+				UPDATE news
+				SET news_content=&quot;24&lt;br /&gt;
+&quot;
+				 WHERE news_id=
+			
+
+mysql error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+

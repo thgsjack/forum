@@ -1,0 +1,30 @@
+#myCarousel {
+	width:650px;
+	margin: auto auto;
+}
+.readmore_div {
+	text-align:right;
+}
+.newsContent_div {
+	width:600px;
+	margin:auto auto;
+}
+.table {
+	margin-top:25px;
+}
+.list_div {
+	padding:8px;
+}
+.listEven_div {
+	background-color: #F5FFEB;
+}
+.table td {
+	padding:0px;
+}
+.well {
+	margin: 8px;
+}
+.titleNumber {
+	font-size:8px;
+	margin-left:10px;
+}

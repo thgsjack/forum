@@ -1,0 +1,7 @@
+[ERROR] http://localhost -> 2013-10-26 18:57:16: 
+
+Invalid SQL: SELECT u_id FROM user 
+	WHERE u_username=&quot;thgsjack@gmail.com&quot;
+
+mysql error: Unknown column 'u_username' in 'where clause'
+
